@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>THPT Tân Phú - Hoạt động ngoại khóa</title>
+  <style>
+ :root {
+      --primary: #a8dadc;
+      --secondary: #457b9d;
+      --background: #f1faee;
+      --text: #1d3557;
+      --accent: #ffb4a2;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      animation: fadeInPage 1s ease-in;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), #d8f3dc);
+      padding: 2em 1em 1.5em;
+      text-align: center;
+      border-bottom: 4px solid var(--accent);
+      animation: slideDown 0.8s ease-out;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    header img {
+      width: 100px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+
+    header img:hover {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    header h1 {
+      font-size: 2.3em;
+      margin: 0.2em 0 0;
+      color: var(--text);
+    }
+
+    header p {
+      font-style: italic;
+      color: #555;
+      margin-top: 0.3em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.6em;
+      margin-top: 1em;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      background-color: var(--secondary);
+      padding: 0.6em 1.4em;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: var(--accent);
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .section {
+      padding: 3em 1em;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      font-size: 1.9em;
+      color: var(--secondary);
+      margin-bottom: 1em;
+    }
+
+    .school-img {
+      width: 100%;
+      max-width: 800px;
+      display: block;
+      margin: 25px auto;
+      border-radius: 14px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      animation: fadeInImg 1.4s ease-in-out;
+    }
+
+    @keyframes fadeInImg {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    p {
+      font-size: 1.1em;
+      margin-bottom: 1.2em;
+    }
+
+    footer {
+      background-color: var(--secondary);
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .footer-info p {
+      margin: 6px 0;
+      font-size: 0.95em;
+    }
+
+    .footer-copy p {
+      font-size: 0.9em;
+      opacity: 0.85;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8em;
+      }
+      nav ul {
+        flex-direction: column;
+      }
+      nav ul li a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+    .activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5em;
+  margin-top: 2em;
+}
+
+.activity-card {
+  background-color: white;
+  border-radius: 16px;
+  padding: 1.5em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.activity-card h3 {
+  color: var(--secondary);
+  margin-bottom: 0.6em;
+  font-size: 1.25em;
+}
+
+.activity-card p {
+  font-size: 1em;
+  color: var(--text);
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/428139535_435183265513765_6639606144939144966_n.jpg" 
+         alt="Logo Trường THPT Tân Phú" />
+    <h1>Trường THPT Tân Phú</h1>
+    <p>Năng động – Sáng tạo – Phát triển toàn diện</p>
+  </header>
+
+ <nav>
+  <ul>
+    <li><a href="index.html">Trang chủ</a></li>
+    <li><a href="gioithieu.html">Giới thiệu</a></li>
+    <li><a href="hoatdong.html" class="active">Hoạt động ngoại khóa</a></li>
+    <li><a href="tuyensinh.html">Tuyển sinh</a></li>
+    <li><a href="thanhtich.html">Thành tích</a></li>
+    <li><a href="lienhe.html">Liên hệ</a></li>
+  </ul>
+</nav>
+
+
+  <div class="container">
+  <h2>Hoạt động ngoại khóa</h2>
+  <p>Trường THPT Tân Phú tạo ra môi trường học đường năng động với nhiều hoạt động ngoại khóa đa dạng và đầy cảm hứng.</p>
+
+  <div class="activities-grid">
+    <div class="activity-card">
+      <h3>Hội trại truyền thống</h3>
+      <p>Hoạt động sôi động gắn kết học sinh qua các trò chơi tập thể và kỹ năng sinh tồn.</p>
+    </div>
+    <div class="activity-card">
+      <h3>Ngày hội văn hóa</h3>
+      <p>Không gian đa sắc màu thể hiện bản sắc dân tộc và tinh thần sáng tạo của học sinh.</p>
+    </div>
+    <div class="activity-card">
+      <h3>Câu lạc bộ âm nhạc</h3>
+      <p>Nơi các tài năng trẻ được tỏa sáng qua biểu diễn, luyện tập và sáng tác âm nhạc.</p>
+    </div>
+    <div class="activity-card">
+      <h3>CLB Robotics & Công nghệ</h3>
+      <p>Khơi gợi đam mê kỹ thuật qua việc thiết kế, lập trình và thi đấu robot sáng tạo.</p>
+    </div>
+    <div class="activity-card">
+      <h3>Giải đấu thể thao</h3>
+      <p>Bóng đá, bóng chuyền, cầu lông và nhiều bộ môn giúp học sinh rèn luyện thể chất, ý chí.</p>
+    </div>
+  </div>
+</div>
+
+  <footer>
+    <p>&copy; 2025 Trường THPT Tân Phú - Đồng Nai</p>
+  </footer>
+</body>
+</html>
