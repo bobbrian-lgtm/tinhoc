@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thành tích - THPT Tân Phú</title>
+  <meta name="description" content="Thành tích và giải thưởng của học sinh, giáo viên Trường THPT Tân Phú - Đồng Nai.">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0066cc;
+      --secondary: #004080;
+      --background: #ffffff;
+      --light-bg: #f8f9fa;
+      --text: #333333;
+      --accent: #ff6600;
+      --light-accent: #fff0e6;
+      --gray: #6c757d;
+      --light-gray: #dee2e6;
+      --success: #28a745;
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+      animation: fadeInPage 0.8s ease-in;
+    }
+
+    @keyframes fadeInPage {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header & Navigation */
+    header {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-top {
+      background-color: var(--primary);
+      color: white;
+      padding: 8px 0;
+      font-size: 0.9rem;
+    }
+
+    .header-top .container {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .header-contacts a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+
+    .header-social a {
+      color: white;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    .header-main {
+      display: flex;
+      align-items: center;
+      padding: 15px 0;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 60px;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .logo-text h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .logo-text p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      margin: 0;
+    }
+
+    nav {
+      margin-left: auto;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: var(--text);
+      padding: 10px 15px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+      display: block;
+      position: relative;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--primary);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+    }
+
+    nav ul li a:hover::after,
+    nav ul li a.active::after {
+      width: 60%;
+    }
+
+    nav ul li a.active {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    .close-menu {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      color: var(--primary);
+      cursor: pointer;
+    }
+
+    /* Page Banner */
+    .page-banner {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('truong1.jpg');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 0;
+      text-align: center;
+      color: white;
+    }
+
+    .page-banner h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .breadcrumbs {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+
+    .breadcrumbs a {
+      color: #fff;
+      opacity: 0.8;
+      text-decoration: none;
+    }
+
+    .breadcrumbs a:hover {
+      opacity: 1;
+    }
+
+    .breadcrumbs .separator {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    /* Section Styles */
+    section {
+      padding: 60px 0;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+      font-weight: 600;
+    }
+
+    section h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent);
+      transform: translateX(-50%);
+    }
+
+    /* Achievement Styles */
+    .achievements-section {
+      background-color: var(--light-bg);
+    }
+
+    .achievement-category {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .achievement-header {
+      background-color: var(--primary);
+      padding: 20px;
+      color: white;
+    }
+
+    .achievement-header h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+    }
+
+    .achievement-header h3 i {
+      margin-right: 15px;
+      font-size: 1.8rem;
+    }
+
+    .achievement-content {
+      padding: 25px;
+    }
+
+    .achievement-item {
+      border-bottom: 1px solid var(--light-gray);
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .achievement-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .achievement-medal {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-right: 20px;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .achievement-medal.gold {
+      color: #FFD700;
+    }
+
+    .achievement-medal.silver {
+      color: #C0C0C0;
+    }
+
+    .achievement-medal.bronze {
+      color: #CD7F32;
+    }
+
+    .achievement-details h4 {
+      font-size: 1.2rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .achievement-details p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 5px;
+    }
+
+    .achievement-details .achievement-meta {
+      display: flex;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--primary);
+      margin-top: 10px;
+    }
+
+    .achievement-details .achievement-meta i {
+      margin-right: 5px;
+    }
+
+    .achievement-date {
+      margin-right: 15px;
+    }
+
+    /* Statistics Section */
+    .statistics-section {
+      background-color: white;
+    }
+
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+
+    .stat-item {
+      background-color: var(--light-bg);
+      border-radius: 10px;
+      padding: 30px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .stat-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .stat-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 15px;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .stat-title {
+      font-size: 1rem;
+      color: var(--gray);
+    }
+
+    /* Timeline Section */
+    .timeline-section {
+      background-color: var(--light-bg);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 3px;
+      background-color: var(--primary);
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -1.5px;
+    }
+
+    .timeline-item {
+      padding: 10px 40px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .timeline-item::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 4px solid var(--accent);
+      border-radius: 50%;
+      top: 15px;
+      z-index: 1;
+    }
+
+    .left {
+      left: 0;
+    }
+
+    .right {
+      left: 50%;
+    }
+
+    .left::after {
+      right: -10px;
+    }
+
+    .right::after {
+      left: -10px;
+    }
+
+    .timeline-content {
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+
+    .timeline-year {
+      position: absolute;
+      top: 15px;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .left .timeline-year {
+      right: 15px;
+    }
+
+    .right .timeline-year {
+      left: 15px;
+    }
+
+    .timeline-content h4 {
+      font-size: 1.2rem;
+      color: var(--secondary);
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .timeline-content p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #1a1a1a;
+      color: white;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .footer-about p {
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: #333;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent);
+      transform: translateY(-3px);
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+      color: #bbb;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links ul li a:hover {
+      color: white;
+      padding-left: 5px;
+    }
+
+    .contact-info p {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    .contact-info p i {
+      margin-right: 10px;
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin-top: 5px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #333;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: block;
+        margin-left: auto;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 300px;
+        height: 100vh;
+        background-color: white;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        padding-top: 60px;
+        z-index: 1100;
+      }
+      nav.active {
+        right: 0;
+      }
+      nav ul {
+        flex-direction: column;
+        gap: 0;
+      }
+      nav ul li a {
+        padding: 15px 25px;
+      }
+      .close-menu {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .page-banner h2 {
+        font-size: 2rem;
+      }
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+      .timeline::after {
+        left: 31px;
+      }
+      .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+      }
+      .timeline-item::after {
+        left: 21px;
+      }
+      .right {
+        left: 0;
+      }
+      .left .timeline-year,
+      .right .timeline-year {
+        left: 15px;
+      }
+      .achievement-item {
+        flex-direction: column;
+      }
+      .achievement-medal {
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Top -->
+  <div class="header-top">
+    <div class="container">
+      <div class="header-contacts">
+        <a href="tel:(0251)1234567"><i class="fas fa-phone"></i> (0251) 1234567</a>
+        <a href="mailto:info@thpttanphu.edu.vn"><i class="fas fa-envelope"></i> info@thpttanphu.edu.vn</a>
+      </div>
+      <div class="header-social">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header>
+    <div class="container header-main">
+      <div class="logo">
+        <img src="logotruong.jpg" alt="Logo Trường THPT Tân Phú">
+        <div class="logo-text">
+          <h1>THPT Tân Phú</h1>
+          <p>Trường Trung học Phổ thông</p>
+        </div>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu chính" id="menuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+      <nav id="mainNav">
+        <button class="close-menu" id="closeMenu" aria-label="Đóng menu">
+          <i class="fas fa-times"></i>
+        </button>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+          <li><a href="hoatdong.html">Hoạt động</a></li>
+          <li><a href="tuyensinh.html">Tuyển sinh</a></li>
+          <li><a href="thanhtich.html" class="active">Thành tích</a></li>
+          <li><a href="thuvien.html">Thư viện</a></li>
+          <li><a href="cuuhocsinh.html">Cựu học sinh</a></li>
+          <li><a href="lienhe.html">Liên hệ</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Banner -->
+  <section class="page-banner">
+    <div class="container">
+      <h2>Thành tích & Giải thưởng</h2>
+      <div class="breadcrumbs">
+        <a href="index.html">Trang chủ</a>
+        <span class="separator">/</span>
+        <span>Thành tích</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section class="achievements-section">
+    <div class="container">
+      <h2>Thành tích nổi bật</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Trường THPT Tân Phú tự hào với những thành tích xuất sắc trong học tập, thể thao, văn nghệ và các hoạt động khác, thể hiện sự nỗ lực không ngừng của thầy và trò nhà trường.</p>
+      
+      <!-- Academic Achievements -->
+      <div class="achievement-category">
+        <div class="achievement-header">
+          <h3><i class="fas fa-graduation-cap"></i> Thành tích Học tập</h3>
+        </div>
+        <div class="achievement-content">
+          <div class="achievement-item">
+            <div class="achievement-medal gold">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="achievement-details">
+              <h4>Giải Nhất HSG cấp tỉnh - Môn Toán</h4>
+              <p>Học sinh: Nguyễn Văn An (12A2)</p>
+              <p>Năm học: 2024-2025</p>
+              <div class="achievement-meta">
+                <span class="achievement-date"><i class="far fa-calendar-alt"></i> 2024</span>
+                <span class="achievement-type"><i class="fas fa-trophy"></i> Cá nhân</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="achievement-item">
+            <div class="achievement-medal gold">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="achievement-details">
+              <h4>Giải Nhất HSG cấp tỉnh - Môn Vật lý</h4>
+              <p>Học sinh: Nguyễn Minh Quân & Nguyễn Chí Đạt</p>
+              <p>Năm học: 2024-2025</p>
+              <div class="achievement-meta">
+                <span class="achievement-date"><i class="far fa-calendar-alt"></i> 2024</span>
+                <span class="achievement-type"><i class="fas fa-trophy"></i> Cá nhân</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Arts & Sports Achievements -->
+      <div class="achievement-category">
+        <div class="achievement-header">
+          <h3><i class="fas fa-music"></i> Văn nghệ - Thể thao</h3>
+        </div>
+        <div class="achievement-content">
+          <div class="achievement-item">
+            <div class="achievement-medal gold">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="achievement-details">
+              <h4>Giải Nhất Hội thi Văn nghệ cấp tỉnh</h4>
+              <p>CLB Văn học - Nghệ thuật</p>
+              <p>Tiết mục: Múa truyền thống (2024)</p>
+              <div class="achievement-meta">
+                <span class="achievement-date"><i class="far fa-calendar-alt"></i> 2024</span>
+                <span class="achievement-type"><i class="fas fa-users"></i> Tập thể</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="achievement-item">
+            <div class="achievement-medal gold">
+              <i class="fas fa-medal"></i>
+            </div>
+            <div class="achievement-details">
+              <h4>Vô địch Giải Bóng đá Học sinh cấp tỉnh</h4>
+              <p>Đội bóng nam</p>
+              <p>Năm học: 2023</p>
+              <div class="achievement-meta">
+                <span class="achievement-date"><i class="far fa-calendar-alt"></i> 2023</span>
+                <span class="achievement-type"><i class="fas fa-users"></i> Tập thể</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Awards -->
+      <div class="achievement-category">
+        <div class="achievement-header">
+          <h3><i class="fas fa-award"></i> Giải thưởng & Bằng khen</h3>
+        </div>
+        <div class="achievement-content">
+          <div class="achievement-item">
+            <div class="achievement-medal">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="achievement-details">
+              <h4>Bằng khen của UBND tỉnh Đồng Nai</h4>
+              <p>Ghi nhận đóng góp xuất sắc trong giáo dục</p>
+              <p>Năm: 2023</p>
+              <div class="achievement-meta">
+                <span class="achievement-date"><i class="far fa-calendar-alt"></i> 2023</span>
+                <span class="achievement-type"><i class="fas fa-school"></i> Nhà trường</span>
+              </div>
+            </div>
+          </div>
+          
+          <div class="achievement-item">
+            <div class="achievement-medal">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <div class="achievement-details">
+              <h4>Top 10 trường có điểm thi Đại học cao nhất tỉnh</h4>
+              <p>Năm: 2022, 2023, 2024</p>
+              <p>Thành tích đáng tự hào của toàn trường</p>
+              <div class="achievement-meta">
+                <span class="achievement-date"><i class="far fa-calendar-alt"></i> 2022-2024</span>
+                <span class="achievement-type"><i class="fas fa-school"></i> Nhà trường</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="statistics-section">
+    <div class="container">
+      <h2>Con số ấn tượng</h2>
+      <div class="stats-container">
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-number">50+</div>
+          <div class="stat-title">Giải thưởng học sinh giỏi cấp tỉnh</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-medal"></i>
+          </div>
+          <div class="stat-number">25+</div>
+          <div class="stat-title">Huy chương thể thao các cấp</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <div class="stat-number">90%</div>
+          <div class="stat-title">Tỷ lệ đỗ đại học hàng năm</div>
+        </div>
+        
+        <div class="stat-item">
+          <div class="stat-icon">
+            <i class="fas fa-certificate"></i>
+          </div>
+          <div class="stat-number">15+</div>
+          <div class="stat-title">Bằng khen từ UBND tỉnh</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline Section -->
+  <section class="timeline-section">
+    <div class="container">
+      <h2>Hành trình phát triển</h2>
+      <div class="timeline">
+        <div class="timeline-item left">
+          <div class="timeline-year">2000</div>
+          <div class="timeline-content">
+            <h4>Thành lập trường</h4>
+            <p>Trường THPT Tân Phú được thành lập, đánh dấu sự ra đời của một ngôi trường mới tại tỉnh Đồng Nai.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-year">2010</div>
+          <div class="timeline-content">
+            <h4>Top 20 trường THPT tỉnh Đồng Nai</h4>
+            <p>Lần đầu tiên lọt vào Top 20 trường THPT có chất lượng giáo dục tốt nhất tỉnh Đồng Nai.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item left">
+          <div class="timeline-year">2015</div>
+          <div class="timeline-content">
+            <h4>Trường chuẩn Quốc gia</h4>
+            <p>Đạt chuẩn quốc gia, khẳng định chất lượng giáo dục và đào tạo của nhà trường.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item right">
+          <div class="timeline-year">2022</div>
+          <div class="timeline-content">
+            <h4>Top 10 trường THPT tỉnh Đồng Nai</h4>
+            <p>Lọt vào Top 10 trường THPT có điểm thi đại học cao nhất tỉnh Đồng Nai.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column footer-about">
+          <h3>THPT Tân Phú</h3>
+          <p>Trường THPT Tân Phú - nơi kết nối tri thức và nuôi dưỡng ước mơ của thế hệ trẻ tại Đồng Nai.</p>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="footer-column footer-links">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li><a href="gioithieu.html">Giới thiệu</a></li>
+            <li><a href="hoatdong.html">Hoạt động</a></li>
+            <li><a href="tuyensinh.html">Tuyển sinh</a></li>
+            <li><a href="thanhtich.html">Thành tích</a></li>
+            <li><a href="lienhe.html">Liên hệ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column footer-links">
+          <h3>Liên kết khác</h3>
+          <ul>
+            <li><a href="#">Bộ Giáo dục & Đào tạo</a></li>
+            <li><a href="#">Sở GD&ĐT Đồng Nai</a></li>
+            <li><a href="#">Cổng thông tin học sinh</a></li>
+            <li><a href="#">Lịch công tác</a></li>
+            <li><a href="#">Thời khóa biểu</a></li>
+          </ul>
+        </div>
+        <div class="footer-column contact-info">
+          <h3>Thông tin liên hệ</h3>
+          <p><i class="fas fa-map-marker-alt"></i> 17/3, Phú Lợi, Định Quán, Đồng Nai, Vietnam</p>
+          <p><i class="fas fa-phone"></i> (0251) 1234567</p>
+          <p><i class="fas fa-envelope"></i> info@thpttanphu.edu.vn</p>
+          <p><i class="fas fa-clock"></i> Thứ Hai - Thứ Bảy: 7:00 - 17:00</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Trường THPT Tân Phú - Đồng Nai. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const closeMenu = document.getElementById('closeMenu');
+    const mainNav = document.getElementById('mainNav');
+
+    if (menuBtn && closeMenu && mainNav) {
+      menuBtn.addEventListener('click', () => {
+        mainNav.classList.add('active');
+      });
+      
+      closeMenu.addEventListener('click', () => {
+        mainNav.classList.remove('active');
+      });
+    }
+  </script>
+</body>
+</html>
