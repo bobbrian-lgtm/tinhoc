@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ - THPT Tân Phú</title>
+    <meta name="description" content="Thông tin liên hệ Trường THPT Tân Phú - Đồng Nai.">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --secondary: #004080;
+            --background: #ffffff;
+            --light-bg: #f8f9fa;
+            --text: #333333;
+            --accent: #ff6600;
+            --light-accent: #fff0e6;
+            --gray: #6c757d;
+            --light-gray: #dee2e6;
+            --success: #28a745;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            animation: fadeInPage 0.8s ease-in;
+        }
+
+        @keyframes fadeInPage {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 0;
+            font-size: 0.9rem;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .header-contacts a {
+            color: white;
+            text-decoration: none;
+            margin-right: 15px;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+
+        nav {
+            margin-left: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text);
+            padding: 10px 15px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: block;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 60%;
+        }
+
+        nav ul li a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Page Banner */
+        .page-banner {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('truong2.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            text-align: center;
+            color: white;
+        }
+
+        .page-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .breadcrumbs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            font-size: 0.9rem;
+        }
+
+        .breadcrumbs a {
+            color: #fff;
+            opacity: 0.8;
+            text-decoration: none;
+        }
+
+        .breadcrumbs a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumbs .separator {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            font-weight: 600;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+            transform: translateX(-50%);
+        }
+
+        /* Contact Form Section */
+        .contact-section {
+            background-color: var(--light-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info {
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .contact-method {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            min-width: 50px;
+            height: 50px;
+            background-color: var(--light-accent);
+            color: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text);
+        }
+
+        .contact-text p, .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: var(--accent);
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 6px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding-top: 0;
+        }
+
+        .map-container {
+            height: 450px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-about p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #bbb;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .contact-info p {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+
+        .contact-info p i {
+            margin-right: 10px;
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 30px;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+                margin-left: auto;
+            }
+            nav {
+                position: fixed;
+                top: 0;
+                right: -300px;
+                width: 300px;
+                height: 100vh;
+                background-color: white;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+                padding-top: 60px;
+            }
+            nav.active {
+                right: 0;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 0;
+            }
+            nav ul li a {
+                padding: 15px 25px;
+            }
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            .page-banner h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top -->
+    <div class="header-top">
+        <div class="container">
+            <div class="header-contacts">
+                <a href="tel:(0251)1234567"><i class="fas fa-phone"></i> (0251) 1234567</a>
+                <a href="mailto:info@thpttanphu.edu.vn"><i class="fas fa-envelope"></i> info@thpttanphu.edu.vn</a>
+            </div>
+            <div class="header-social">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="container header-main">
+            <div class="logo">
+                <img src="logotruong.jpg" alt="Logo Trường THPT Tân Phú">
+                <div class="logo-text">
+                    <h1>THPT Tân Phú</h1>
+                    <p>Trường Trung học Phổ thông</p>
+                </div>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Menu chính" id="menuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav id="mainNav">
+                <button class="close-menu" id="closeMenu" aria-label="Đóng menu">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="gioithieu.html">Giới thiệu</a></li>
+                    <li><a href="hoatdong.html">Hoạt động</a></li>
+                    <li><a href="tuyensinh.html">Tuyển sinh</a></li>
+                    <li><a href="thanhtich.html">Thành tích</a></li>
+                    <li><a href="thuvien.html">Thư viện</a></li>
+                    <li><a href="cuuhocsinh.html">Cựu học sinh</a></li>
+                    <li><a href="lienhe.html" class="active">Liên hệ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <div class="container">
+            <h2>Liên hệ với chúng tôi</h2>
+            <div class="breadcrumbs">
+                <a href="index.html">Trang chủ</a>
+                <span class="separator">/</span>
+                <span>Liên hệ</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>Thông tin liên hệ</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Kết nối với chúng tôi</h3>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Địa chỉ</h4>
+                            <p>Số 123, Đường ABC, TP. Đồng Nai, Tỉnh Đồng Nai</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Điện thoại</h4>
+                            <p><a href="tel:(0251)1234567">(0251) 1234567</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@thpttanphu.edu.vn">info@thpttanphu.edu.vn</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Giờ làm việc</h4>
+                            <p>Thứ Hai - Thứ Bảy: 7:00 - 17:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Mạng xã hội</h4>
+                            <div class="social-links" style="margin-top: 10px;">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-container">
+                    <h3>Gửi tin nhắn cho chúng tôi</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Họ và tên <span style="color: red;">*</span></label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone" class="form-label">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Tiêu đề <span style="color: red;">*</span></label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Nội dung tin nhắn <span style="color: red;">*</span></label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Gửi tin nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Bản đồ chỉ đường</h2>
+            <div class="map-container">
+                <!-- Đặt iframe Google Maps hoặc bản đồ khác ở đây -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1748376372384!2d107.35176207492687!3d11.037998089125034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174e773d9223c77%3A0x7be435186e42afd1!2zVHLGsOG7nW5nIFRIUFQgVMOibiBQaMO6!5e0!3m2!1svi!2s!4v1713880520925!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column footer-about">
+                    <h3>THPT Tân Phú</h3>
+                    <p>Trường THPT Tân Phú - nơi kết nối tri thức và nuôi dưỡng ước mơ của thế hệ trẻ tại Đồng Nai.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column footer-links">
+                    <h3>Liên kết nhanh</h3>
+                    <ul>
+                        <li><a href="gioithieu.html">Giới thiệu</a></li>
+                        <li><a href="hoatdong.html">Hoạt động</a></li>
+                        <li><a href="tuyensinh.html">Tuyển sinh</a></li>
+                        <li><a href="thanhtich.html">Thành tích</a></li>
+                        <li><a href="lienhe.html">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-links">
+                    <h3>Liên kết khác</h3>
+                    <ul>
+                        <li><a href="#">Bộ Giáo dục & Đào tạo</a></li>
+                        <li><a href="#">Sở GD&ĐT Đồng Nai</a></li>
+                        <li><a href="#">Cổng thông tin học sinh</a></li>
+                        <li><a href="#">Lịch công tác</a></li>
+                        <li><a href="#">Thời khóa biểu</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column contact-info">
+                    <h3>Thông tin liên hệ</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Số 123, Đường ABC, TP. Đồng Nai, Tỉnh Đồng Nai</p>
+                    <p><i class="fas fa-phone"></i> (0251) 1234567</p>
+                    <p><i class="fas fa-envelope"></i> info@thpttanphu.edu.vn</p>
+                    <p><i class="fas fa-clock"></i> Thứ Hai - Thứ Bảy: 7:00 - 17:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Trường THPT Tân Phú - Đồng Nai. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenu = document.getElementById('closeMenu');
+        const mainNav = document.getElementById('mainNav');
+
+        if (menuBtn && closeMenu && mainNav) {
+            menuBtn.addEventListener('click', () => {
+                mainNav.classList.add('active');
+            });
+            
+            closeMenu.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        }
+
+        // Form Validation
+        const contactForm = document.getElementById('contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Thực hiện xử lý gửi form ở đây (có thể dùng AJAX)
+                alert('Cảm ơn bạn đã gửi tin nhắn! Chúng tôi sẽ phản hồi trong thời gian sớm nhất.');
+                this.reset();
+            });
+        }
+    </script>
+</body>
+</html>
